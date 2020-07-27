@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: -1;
+}
+
+
+/* nav bar */
+
+nav {
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    min-height: 5vh;
+    max-height: 5vh;
+    color: white;
+    align-items: center;
+}
+
+
+/* sinify.net on bar */
+
+#logo {
+    grid-column: 1/2;
+    font-size: 24px;
+    justify-self: center;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* menu button */
+
+.hamburger {
+    grid-column: 2/3;
+    height: 35px;
+    width: 35px;
+    justify-self: start;
+    justify-content: space-around;
+}
+
+
+/* section black bars */
+
+section {
+    display: flex;
+    height: 90vh;
+    justify-items: center;
+    align-items: center;
+    background-color: black;
+}
+
+
+/* section div for img and headline */
+
+.hero {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+/* bg img */
+
+.hero img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* after func on section div, can use for opacity, but not needed */
+
+.hero::after {
+    content: "";
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.0;
+}
+
+
+/* explore img text */
+
+.headline {
+    font-family: fantasy;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 60px;
+    z-index: 3;
+    transform: translate(-50%, 50%);
+    color: white;
+}
+
+/* HAMBURGER DROPDOWN TESTING */
+.dropdown {
+    display: inline-block;
+    width: 35px;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #696969;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    justify-self: start;
+}
+
+.dropdown:hover .hamburger {
+    background-color: #00d9ff;
+}
+
+/* This is cheap way to handle refactoring of nav spacing for different res sizes */
+@media screen and (max-width: 1000px) {
+    #logo {
+        display: none;
+    }
+}

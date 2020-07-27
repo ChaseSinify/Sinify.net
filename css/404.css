@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 10%;
+    min-height: 5vh;
+    max-height: 5vh;
+    color: white;
+    align-items: center;
+}
+
+
+/* sinify.net on bar */
+
+#logo {
+    grid-column: 1/2;
+    font-size: 24px;
+    justify-self: center;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* menu button */
+
+.hamburger {
+    grid-column: 2/3;
+    height: 35px;
+    width: 35px;
+    justify-self: start;
+    justify-content: space-around;
+}
+
+/* HAMBURGER DROPDOWN TESTING */
+.dropdown {
+    display: inline-block;
+    width: 35px;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #696969;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    justify-self: start;
+}
+
+.dropdown:hover .hamburger {
+    background-color: #00d9ff;
+}
+
+/* This is cheap way to handle refactoring of nav spacing for different res sizes */
+@media screen and (max-width: 1000px) {
+    #logo {
+        display: none;
+    }
+}
